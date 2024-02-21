@@ -24,12 +24,13 @@ public class Main {
 			System.out.println("-------------------------------------\n\n");
 			System.out.println("Select one of the following:\n"
 					+ "\tPress 1 to see a club member's details.\n"
+					+ "\tPress 2 to see add a club member.\n"
 					+ "\tPress q to exit.");
 			input = sc.nextLine();
 			if (input.equals("q")){
 				System.exit(0);
 			}
-			if(input.equals("1")) {
+			else if(input.equals("1")) {
 				System.out.println("-------------------------------------");
 				System.out.println("Type name of club member: ");
 				input = sc.nextLine();
@@ -41,6 +42,22 @@ public class Main {
 					System.out.println(p.printPerson(result));
 				}
 				System.out.println("-------------------------------------\n\n");
+			}
+			else if(input.equals("2")) {
+				System.out.println("-------------------------------------");
+				System.out.println("Type name of new club member: ");
+				input = sc.nextLine();
+				System.out.println("Type age of new club member: ");
+				String age = sc.nextLine();
+				try {
+					m.registerPerson(input, Integer.parseInt(age));
+				}
+				catch(NumberFormatException e) {
+					System.err.println("Please enter an Integer for age! ");
+				}
+				finally {
+					System.out.println("-------------------------------------\n\n");
+				}
 			}
 		}
 	}
