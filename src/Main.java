@@ -21,15 +21,16 @@ public class Main {
 			String input;
 			Scanner sc = new Scanner(System.in);
 			System.out.println(p.printMainPage());
+			System.out.println("-------------------------------------\n\n");
 			System.out.println("Select one of the following:\n"
-					+ "Press 1 to see a club member's details.\n"
-					+ "Press q to exit.");
+					+ "\tPress 1 to see a club member's details.\n"
+					+ "\tPress q to exit.");
 			input = sc.nextLine();
 			if (input.equals("q")){
 				System.exit(0);
 			}
 			if(input.equals("1")) {
-				System.out.println("---------------------------");
+				System.out.println("-------------------------------------");
 				System.out.println("Type name of club member: ");
 				input = sc.nextLine();
 				Person result = m.getPerson(input);
@@ -39,7 +40,7 @@ public class Main {
 				else {
 					System.out.println(p.printPerson(result));
 				}
-				System.out.println("---------------------------\n\n");
+				System.out.println("-------------------------------------\n\n");
 			}
 		}
 	}
